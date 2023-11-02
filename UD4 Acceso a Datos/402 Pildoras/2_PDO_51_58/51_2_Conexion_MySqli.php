@@ -18,20 +18,20 @@
     //Añade comentarios donde copies líneas de cada parte del código en su forma procedimental
     //PROCEDIMENTAL MYSQLI
     //$conexion=mysqli_connect($db_host, $db_usuario, $db_contra, $db_nombre);
-    $conexion =  mysqli_connect($db_host, $db_usuario, $db_contra, $db_nombre);
+    $conexion =  new mysqli("localhost", "root","","dwes");
 
     //4 COMENTAR Y COMPLETAR
-    if (FALTACOMPLETAR) 
+    if ($conexion -> connect_errno) 
         echo "Fallo al conectar con la BBDD " . $conexion -> connect_errno;
     
-    //5 COMENTAR Y COMPLETAR
-    $conexion -> FALTACOMPLETAR
+    //5 Función para envio correcto de caracteres de la lengua española
+    $conexion -> set_charset("utf8");
 
-    //6 COMENTAR Y COMPLETAR
-    $sql="FALTACOMPLETAR";
+    //6 Consulta al ejecutar en la BBDD dwes
+    $sql="SELECT * FROM PRODUCTOS";
 
-    //7 COMENTAR Y COMPLETAR
-    $resultados = FALTACOMPLETAR
+    //7 Funcion de PHP POO mysqli para ejecutar la consulta en la BBDD.
+    $resultados = $conexion -> query($sql);
 
     //8 En caso de que ocurra algun tipo de error con este condicional cerraremos las conexion (OPCIONAL)
     if ($conexion -> errno) {
@@ -39,7 +39,7 @@
     }
 
     //9 COMENTAR Y COMPLETAR
-    while($fila=FALTACOMPLETAR){
+    while($fila=$resultados->fetch_assoc()){
         
         echo "<table><tr><td>";
         echo $fila['codigoarticulo'] . "</td><td>";       
@@ -54,7 +54,7 @@
 
     //Otra manera de imprimir estos datos
     //10 COMENTAR Y COMPLETAR
-    while($fila=$resultados-FALTACOMPLETAR){
+    while($fila=$resultados->fetch_array()){
         
         echo "<table><tr><td>";
         echo $fila['0'] . "</td><td>";       
@@ -69,7 +69,7 @@
 
 
     //11 COMENTAR Y COMPLETAR
-    $conexion -> FALTACOMPLETAR;
+    $conexion -> close();
 
 
        

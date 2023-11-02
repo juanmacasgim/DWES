@@ -11,7 +11,7 @@
     Información:  PDO Conexión a BBDD. Vídeo 52
     Enlace a video:    https://www.youtube.com/watch?v=uDNfxOoLzSI 
     Finalidad ejercicio:  Conectar con PDO y hacer prueba OK
-    Alumno:
+    Alumno: Juan Maria Castillo Gimenez
 */
 ?>
 <body>
@@ -20,12 +20,12 @@
 try {
     //1 COMENTAR Y COMPLETAR
 
-    $base = FALTACOMPLETAR
+    $base = new PDO('mysql:host=localhost; dbname=dwes', 'root', '');
     echo 'Conexión OK';
 
 } catch (Exception $e) {
     //2 COMENTAR Y COMPLETAR
-    die('Error: ' . FALTACOMPLETAR );
+    die('Error: ' . $e->GetMessage());
     
 }finally{
 
