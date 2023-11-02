@@ -1,0 +1,20 @@
+VEREMOS EN ESTE VÍDEO...
+• Diferencias entre get y post
+• Significado de la línea de atributos en BBDD
+
+
+GET y POST son dos técnicas eficientes que pueden enviar los datos a un servidor o navegador y necesariamente que estos se comuniquen. Los dos métodos son distintos cuando el método GET añade los datos codificados a la URI, mientras que en el caso del método POST los datos se añaden al cuerpo y no a la URI. Además, se utiliza el método GET para recuperar los datos. Por el contrario, el método POST se utiliza para almacenar o actualizar los datos.
+
+La etiqueta form se utiliza para expresar el contenido del formulario; esto también se conoce como control de formulario. Estos formularios se rellenan con los datos correspondientes y se envían a la máquina remota para su posterior procesamiento. El funcionamiento del formulario incluye dos cosas cruciales: la primera es la especificación de la dirección del programa que maneja el contenido del formulario con la ayuda de ACTION. Más adelante se encuentra la especificación del método dentro del cual fluyen los datos del formulario con la ayuda del atributo METHOD.
+
+El atributo ACTION describe cómo se debe manejar el formulario HTML. El atributo METHOD gestiona el proceso de presentación de los datos. Los métodos GET y POST se encuentran bajo el atributo METHOD.
+
+    -> Diferencias Principales
+
+        • El método GET coloca los parámetros dentro de la URI mientras que el método POST los agrega al cuerpo.
+        • GET se utiliza esencialmente para obtener la información. En cambio, el objetivo del método POST es actualizar los datos.
+        • Los resultados de la consulta POST no pueden marcarse, mientras que los resultados de la consulta GET pueden marcarse porque existen en forma de URL.
+        • En el método GET la información es visible en la URL lo que aumenta las vulnerabilidades y el riesgo de hacking. Por el contrario, el método POST no muestra variables en la URL y también se pueden utilizar múltiples técnicas de codificación, lo que lo hace resistente.
+        • Cuando se utiliza el método GET en el formulario, sólo se aceptan caracteres ASCII en los tipos de datos. Por el contrario, el método POST no enlaza tipos de datos de formulario y permite caracteres binarios y ASCII.
+        • El tamaño variable en el método GET es de aproximadamente 2000 caracteres. A la inversa, el método POST permite hasta 8 Mb de tamaño variable.
+        • Los datos del método GET se pueden almacenar en caché, mientras que los datos del método POST no.

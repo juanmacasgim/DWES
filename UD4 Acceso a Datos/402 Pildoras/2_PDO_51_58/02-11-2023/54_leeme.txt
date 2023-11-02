@@ -1,0 +1,3 @@
+VEREMOS EN ESTE VIDEO...
+• Cómo utilizar marcadores en una consulta preparada.
+• Uso de arrays asociativos en consultas preparadas.
