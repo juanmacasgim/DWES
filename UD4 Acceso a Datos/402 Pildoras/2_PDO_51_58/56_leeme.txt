@@ -1,0 +1,7 @@
+VEREMOS EN ESTE VIDEO...
+• Insertar registros en la BBDD con PDO
+• Eliminar registros en la BBDD con PDO
+
+PDO es una capa de acceso a la base de datos que proporciona una interfaz rápida y consistente para acceder y administrar bases de datos en aplicaciones PHP. Todos los DBMS tienen controladores PDO específicos que se deben instalar cuando se usa PDO en aplicaciones PHP.
+
+Por defecto, PHP tiene instalado el controlador PDO_SQLite.

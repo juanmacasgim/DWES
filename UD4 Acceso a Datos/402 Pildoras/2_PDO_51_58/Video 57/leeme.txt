@@ -1,0 +1,14 @@
+VEREMOS EN ESTE VÍDEO...
+• Conectar a una BBDD MySql utilizando POO y Mysqli
+
+Vamos a ver como conectarnos a una base de datos utilizando POO y en este proceso a cómo utilizar las clases y herencia para lograrlo. 
+También vamos a crear varios archivos siguiendo la línea de la modularización no en todo su esplendor pero si la vamos a utilizar lo que nos dará la posibilidad de que nuestro proyecto sea reutilizable. Y la idea es que simplemente modificando uno de esos archivos sea suficiente para cambiar y modificar el proyecto entero automáticamente y ahorrarnos un poquito el tener que pasar trabajo.
+
+<?php
+/*
+    Información:  Conexión a BBDD utilizando Clases POO. Vídeo 57
+    Enlace a video:    https://www.youtube.com/watch?v=tA40GGmzrKY
+    Finalidad ejercicio:  
+    Alumno:
+*/
+?>

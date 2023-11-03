@@ -5,7 +5,7 @@
     Información:  PDO Marcadores en consultas preparadas. Vídeo 54
     Enlace a video:    https://www.youtube.com/watch?v=93o1Nx8Qmj0
     Finalidad ejercicio:  
-    Alumno:
+    Alumno: Juan María Castillo Giménez
 */
 ?>
 <head>
@@ -34,25 +34,25 @@ try {
     //3 funcion para establecer el tipo de caracteres a utilizar.
     $base -> exec("SET CHARACTER SET utf8");
 
-    // 3 COMPLETAR Y COMENTAR
-    $sql = "SELECT nombrearticulo, seccion, precio, paisdeorigen FROM productos WHERE seccion = FALTACOMPLETAR AND paisdeorigen = FALTACOMPLETAR";
+    //4 COMPLETAR Y COMENTAR
+    $sql = "SELECT nombrearticulo, seccion, precio, paisdeorigen FROM productos WHERE seccion = :SECC AND paisdeorigen = :PORIG";
 
-    //4 El resultado de la sentencia sql lo vinculamos a la variable $resultado.
+    //5 El resultado de la sentencia sql lo vinculamos a la variable $resultado.
     $resultado = $base -> prepare($sql);
 
-    //5 COMPLETAR Y COMENTAR
-    $resultado -> execute(array(FALTACOMPLETAR, FALTACOMPLETAR));
-
     //6 COMPLETAR Y COMENTAR
-    while($registro = $resultado ->fetch(FALTACOMPLETAR)){
+    $resultado -> execute(array(":SECC"=>$busqueda_sec, ":PORIG"=>$busqueda_porig));
+
+    //7 COMPLETAR Y COMENTAR
+    while($registro = $resultado ->fetch(PDO::FETCH_ASSOC)){
         echo "Nombre Artículo: ". $registro['nombrearticulo'] ." seccion: ". $registro['seccion'] ." precio: ". $registro['precio'] ." Pais de origen: ". $registro['paisdeorigen'] ." <br>";
     }
 
-    //7 Se cierra la tabla a la que hemos accedido para ahorra recursos que no se volveran a usar mejorando el rendimiendo de la manquina.
+    //8 Se cierra la tabla a la que hemos accedido para ahorra recursos que no se volveran a usar mejorando el rendimiendo de la manquina.
     $resultado->closeCursor();
 
 } catch (Exception $e) {
-    //8 Mostrar error cerrando el hilo de procesamiento de la conexion con pdo a la base de datos
+    //9 Mostrar error cerrando el hilo de procesamiento de la conexion con pdo a la base de datos
     die('Error: ' . $e->GetMessage());
     
 }finally{

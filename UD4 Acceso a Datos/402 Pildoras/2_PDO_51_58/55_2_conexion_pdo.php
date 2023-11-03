@@ -30,7 +30,7 @@ try {
 
     //3 COMENTAR
     //$base -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $base -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+    //$base -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
     
     //4 COMENTAR
     $base -> exec("SET CHARACTER SET utf8");
@@ -54,9 +54,17 @@ try {
 
 } catch (Exception $e) {
     //10 COMENTAR y añadir getCode, getLine... TESTEAR ERROR
-    die('Error: ' . $e->GetMessage());
-    die('Código del error: '  FALTACOMPLETAR
-    die('Código del error: '  FALTACOMPLETAR
+    echo "<h2> GetMessage() </h2>";
+    echo $e->GetMessage();
+    //die('Error: ' . $e->GetMessage());
+
+    echo "<h2> getCode() </h2>";
+    echo $e->getCode();
+    //die('Código del error: '  $e->getCode());
+
+    echo "<h2> getLine() </h2>";
+    echo $e->getLine();
+    //die('Código del error: '  $e->getLine());
 
 
 }finally{
