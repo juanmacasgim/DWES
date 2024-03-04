@@ -11,9 +11,12 @@
     <h2>Arrays</h2>
     <?php
     // array numérico
-    $modulos1 = array(0 => "Programación", 1 => "Bases de datos", 2 => "Entornos de desarrollo", 3 => "Sistemas informáticos", 4 => "FOL");
+    $modulos1 = array(0 => "Programación", 1 => "Bases de datos", 2 => "Entornos de desarrollo<br>", 
+    3 => "Sistemas informáticos", 4 => "FOL");
     // array asociativo
-    $modulos2 = array("DWES" => "Desarrollo web en entorno servidor", "DWEC" => "Desarrollo web en entorno cliente", "DIW" => "Diseño de interfaces web", "DAW" => "Despliegue de aplicaciones web", "EIE" => "Empresa e iniciativa emprendedora");
+    $modulos2 = array("DWES" => "Desarrollo web en entorno servidor <br>", 
+    "DWEC" => "Desarrollo web en entorno cliente", "DIW" => "Diseño de interfaces web <br>", 
+    "DAW" => "Despliegue de aplicaciones web", "EIE" => "Empresa e iniciativa emprendedora");
 
     print_r($modulos2);
     print "<br> ARRAY MODULOS1: " . $modulos1[0];
@@ -22,8 +25,10 @@
     <h2>Arrays multidimensionales</h2>
     <?php
     $ciclos = array(
-        "DAW" => array("PR" => "Programación", "BD" => "Base de datos", "DWES" => "Desarrollo web en entorno servidor"),
-        "DAM" => array("PR" => "Programación", "BD" => "Base de datos", "PMDM" => "Programación multimedia y dispositivos móviles")
+        "DAW" => array("PR" => "Programación", "<br>BD" => "Base de datos", 
+        "DWES" => "Desarrollo web en entorno servidor<br>"),
+        "DAM" => array("PR" => "Programación", "BD" => "Base de datos<br>", 
+        "PMDM" => "Programación multimedia y dispositivos móviles")
     );
     print_r($ciclos);
     ?>
@@ -37,11 +42,13 @@
     <h2>Recorrer Arrays (foreach)</h2>
     <h3>Foreach</h3>
     <?php
-    $modulos = array("PR" => "Programación", "BD" => "Base de datos", "DWES" => "Desarrollo web en entorno servidor");
+    $modulos = array("PR" => "Programación", "BD" => "Base de datos<br>", 
+    "DWES" => "Desarrollo web en entorno servidor");
     foreach ($modulos as $valor) {
         print "Módulo: " . $valor . "<br>";
     }
     ?>
+
     <h3>Foreach con clave valor</h3>
     <?php
     foreach ($modulos as $clave => $valor) {
@@ -88,25 +95,38 @@
     <h3>Unset</h3>
     <?php
         $a = array(); // array vacío
-        $modulos = array("Programacion", "Bases de datos", "Entornos de desarrollo", "Sistemas informaticos", "FOL"); // array numérico
+        $modulos = array("Programacion", "Bases de datos", "Entornos de desarrollo"
+        , "Sistemas informaticos", "FOL"); // array numérico
         print_r($modulos);print "<br>";
         unset($modulos[0]); // elimina el primer elemento del array
         print_r($modulos);print "<br>";
     ?>
+
     <h3>Isarray</h3>
     <?php
-    $modulos = array("Programacion", "Bases de datos", "Entornos de desarrollo", "Sistemas informaticos", "FOL"); // array numérico
+    $modulos = array("Programacion", "Bases de datos", "Entornos de desarrollo"
+    , "Sistemas informaticos", "FOL"); // array numérico
     print is_array($modulos); // devuelve true si $modulos es un array
     ?>
 
     <h3>Search</h3>
     <?php
-    $modulos = array("Programacion", "Bases de datos", "Entornos de desarrollo", "Sistemas informaticos", "FOL"); // array numérico
+    $modulos = array("Programacion", "Bases de datos", "Entornos de desarrollo"
+    , "Sistemas informaticos", "FOL"); // array numérico
     $modulo = "Bases de datos";
     if (in_array($modulo, $modulos)) {
         print "El módulo " . $modulo . " está en el array";
     } else {
         print "El módulo " . $modulo . " no está en el array";
     }
+    ?>
+
+    <h3>Ternaria</h3>
+    <?php
+    $modulos = array("Programacion", "Bases de datos", "Entornos de desarrollo"
+    , "Sistemas informaticos", "FOL"); // array numérico
+    $modulo = "Español";
+    $en_array = in_array($modulo, $modulos) ? "está" : "no está";
+    print "El módulo " . $modulo . " " . $en_array . " en el array";
     ?>
 </body>
