@@ -1,0 +1,97 @@
+Incorporaciones en los videos de las Características de PHP
+***************************************************
+Archivos creados en 301_poo_pildoras
+poo.php  (22-27)
+vehiculos.php (22-27)
+concesionario.php (28-29)
+Uso_concesionario.php (28-29)
+
+ 
+***************************************************
+********       POO/VEHICULOS   ********************
+***************************************************
+VIDEO 22
+//Clase con la cual se crearan objetos.
+//Primer objeto de la clase Coche
+
+VIDEO 23
+//Importacion (Include) de la clase de coche la cual se encuentra en un archivo externo.
+fichero vehiculos
+//Clase con la cual se crearan objetos. Disponiendo de tres variables para todos los objetos creados. (Coche)
+//Funciones la cual se ejecutan al llamarlas mediante un objeto creado.
+
+***************************************************
+VIDEO 24
+new Coche, new Camion
+//Se imprime por pantalla la cantidad de ruedas de cada objeto. Creados ambos por defecto.
+
+vehiculos.php
+//Método constructor por defecto.
+
+/* -------------------------   NUEVA CLASE CAMION  ------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+***************************************************
+VIDEO 25
+poo.php
+//Se ejecuta dichas funciones expecificas de los camiones.
+***************************************************
+VIDEO 26 y VIDEO 27
+poo.php
+//Se imprime por pantalla la cantidad de ruedas de cada objeto. Creados ambos por defecto.
+
+vehiculo.PHP
+ // Creamos Getters para las clases
+ //Todas las caracteristicas de coche las adquiere camion tan solo con extends.
+ //Ejecuta el codigo de la funcion padre (coche) arrancar(); y las nuevas lineas de codigo solo para camiones.
+
+***************************************************
+********       CONCESIONARIO/USO ******************
+***************************************************
+VIDEO 28 y 29
+ uso_concesionario.php:
+     //Importacion de las clases que se encuentran en un archivo externo.
+//variable estática ayuda
+ //Se crea el coche de Ana con sus extras y modelo expecifico. Finaliza imprimiendo el precio final.
+ Self hace referencia a la clase actual y se usando cuando instancia dicha clase, es decir se usan métodos estáticos.
+ 
+ concesionario.php
+ //Método constructor por defecto.
+ //Funciones la cual se ejecuta al llamarlas mediante un objeto creado.
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+***************************************************
+VIDEO 29
+
+***************************************************
+********       ARRAYS     *************************
+***************************************************
+VIDEO 30
+arrays repaso
+
+***************************************************
+VIDEO 31
+
+
+***************************************************
+VIDEO 32
