@@ -9,8 +9,10 @@
 
 <body>
     <?php
+        // 1. Conexión a la base de datos
         $conexion = new mysqli("localhost", "root", "", "dwes");
 
+        // 2. Comprobación de la conexión
         if ($conexion->connect_errno) {
             echo "Fallo al conectar a MySQL: " . $conexion->connect_error;
         } else {
