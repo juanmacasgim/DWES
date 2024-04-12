@@ -1,0 +1,24 @@
+Este punto es muy parecido al anterior, la diferencia más grande es
+que en este vídeo hemos usado el panel de PHPMyAdmin para administrar BBDD.
+Vamos a introducir consultas SQL.
+
+Creamos una BBDD llamada pruebas.
+- CREATE DATABASE prueba;
+
+Podemos borrarla si queremos.
+- DROP DATABASE pruebas;
+
+Dentro de la BBDD pruebas creamos la tabla DATOSPERSONALES.
+- CREATE TABLE DATOSPERSONALES (DNI VARCHAR(10), Nombre VARCHAR(15), Apellido VARCHAR(20), Edad INT(2));
+
+Y podemos borrarla si queremos.
+- DROP TABLE DATOSPERSONALES;
+
+Si queremos borrar un campo de una tabla debemos usar ALTER y DROP.
+- ALTER TABLE DATOSPERSONALES DROP Edad;
+
+Si lo que queremos es añadir una columna a una tabla usamos ALTER y ADD.
+- ALTER TABLE DATOSPERsONALES ADD COLUMN EDAD INT(2);
+
+Ahora vamos a insertar datos a nuestra tabla para ello hacemos la siguiente consulta.
+- INSERT INTO DATOSPERSONALES (DNI, NOMBRE, APELLIDO, EDAD) VALUES ("30471164M","Alma","Garcia", 23);

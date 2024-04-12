@@ -1,0 +1,8 @@
+Vamos a realizar consultas a las tablas de una BBDD, para ello usamos SELECT.
+- SELECT DNI, NOMBRE FROM DATOSPERSONALES;
+
+Para consultar todos los datos de una tabla usamos SELECT *.
+- SELECT * FROM DATOSPERSONALES;
+
+Este método se puede usar tanto en el panel PHPMyAdmin como en una terminal.
+Ahora vamos a conectarnos a una base de datos a través de una web PHP.

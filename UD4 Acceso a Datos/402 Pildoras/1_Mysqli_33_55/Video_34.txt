@@ -1,0 +1,17 @@
+Una vez dentro de MariaDB, vamos a practicar:
+
+Creamos una BBDD llamada usuarios.
+- CREATE DATABASE usuarios;
+
+Ahora vamos a usar la BBDD.
+- USE usuarios;
+
+Dentro de la BBDD vamos a crear una tabla con campos:
+- CREATE TABLE DATOSUSUARIOS(nombre VARCHAR,clave VARCHAR);
+
+Podemos ver la tabla que hemos creado y sus datos con el siguiente comando:
+- DESCRIBE DATOSUSUARIOS;
+
+Para terminar podemos borrar la tabla y la base de datos, para ello usamos DROP indicando el tipo que queremos borrar:
+- DROP TABLE DATOSUSUARIOS;
+- DROP DATABASE usuarios;

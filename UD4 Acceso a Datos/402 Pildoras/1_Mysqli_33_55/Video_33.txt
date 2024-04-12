@@ -1,0 +1,7 @@
+Iniciamos XAMPP, podemos usarlo por terminal o en el navegador;
+
+Nos movemos a la siguiente ruta:
+C:\xampp\mysql\bin y una vez dentro iniciamos mysql.exe con el usuario root. Para ello usamos mysql.exe -u root.
+
+O simplemente en nuestro navegador entramos en: 
+http://localhost/phpmyadmin/index.php
