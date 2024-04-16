@@ -4,37 +4,38 @@
 /*
     Información:  PDO Insertar y eliminar registros en BBDD. Vídeo 56
     Enlace a video:    https://www.youtube.com/watch?v=rKUbNFgjI8Y
-    Finalidad ejercicio:  
-    Alumno:
+    Finalidad ejercicio:  Insertar con PDO
+    Alumno: Juan María Castillo Giménez
 */
 ?>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de inseccion de datos</title>
     <style>
-    h1 {
-        text-align: center;
-        color: #00F;
-        border-bottom: dotted #0000FF;
-        width: 50%;
+        h1 {
+            text-align: center;
+            color: #00F;
+            border-bottom: dotted #0000FF;
+            width: 50%;
 
-    }
+        }
 
-    table {
-        border: 1px solid #F00;
-        padding: 20px 50px;
-        margin-top: 50px
-    }
+        table {
+            border: 1px solid #F00;
+            padding: 20px 50px;
+            margin-top: 50px
+        }
 
-    body {
-        display: flex;
-        background-color: #FFC;
-        flex-direction: column;
-        align-content: center;
-        align-items: center;
-    }
+        body {
+            display: flex;
+            background-color: #FFC;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+        }
     </style>
 
 </head>

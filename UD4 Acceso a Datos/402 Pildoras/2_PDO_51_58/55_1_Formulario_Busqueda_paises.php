@@ -2,10 +2,10 @@
 <html lang="en">
 <?php
 /*
-    Información:  
-    Enlace a video:    
-    Finalidad ejercicio:  
-    Alumno:
+    Información:  Olvidos, ruegos, dudas y preguntas. Vídeo 55
+    Enlace a video:   https://youtu.be/cVmR1o573fA 
+    Finalidad ejercicio: Responder dudas
+    Alumno: Juan María Castillo Giménez
 */
 ?>
 <head>

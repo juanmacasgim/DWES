@@ -18,20 +18,17 @@
     
 <?php
 try {
-    //1 COMENTAR Y COMPLETAR
-
+    //1 Conexión a la BBDD dwes a través de PDO.
     $base = new PDO('mysql:host=localhost; dbname=dwes', 'root', '');
     echo 'Conexión OK';
 
 } catch (Exception $e) {
-    //2 COMENTAR Y COMPLETAR
+    //2 En caso de error, muestra el mensaje
     die('Error: ' . $e->GetMessage());
     
-}finally{
-
+}finally{   
     $base = null;
 }
-
 ?>
 </body>
 </html>

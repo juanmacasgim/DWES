@@ -2,8 +2,8 @@
 /*
     Información:  Conexión a BBDD utilizando Clases POO. Vídeo 57
     Enlace a video:    https://www.youtube.com/watch?v=tA40GGmzrKY
-    Finalidad ejercicio:  
-    Alumno:
+    Finalidad ejercicio:  Conexión a BBDD utilizando Programación Orientada a Objetos.
+    Alumno: Juan María Castillo Giménez
 */
 ?>
 <?php

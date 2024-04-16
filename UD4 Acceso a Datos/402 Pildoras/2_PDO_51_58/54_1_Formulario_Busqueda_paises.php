@@ -4,8 +4,8 @@
 /*
     Información:  PDO Marcadores en consultas preparadas. Vídeo 54
     Enlace a video:    https://www.youtube.com/watch?v=93o1Nx8Qmj0
-    Finalidad ejercicio:  
-    Alumno:
+    Finalidad ejercicio:  Usar marcadores en consultas preparadas
+    Alumno: Juan María Castillo Giménez
 */
 ?>
 <head>
@@ -42,7 +42,7 @@
                 <td> <input type="text" name="p_origen"></td>
             </tr>
         </table>
-        <input type="submit" name="enviando" value="Dale!">
+        <input  type="submit" name="enviando" value="Dale!">
 
     </form>
 

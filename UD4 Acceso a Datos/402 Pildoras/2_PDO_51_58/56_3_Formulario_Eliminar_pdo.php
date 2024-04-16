@@ -4,8 +4,8 @@
 /*
     Información:  PDO Insertar y eliminar registros en BBDD. Vídeo 56
     Enlace a video:    https://www.youtube.com/watch?v=rKUbNFgjI8Y
-    Finalidad ejercicio:  
-    Alumno:
+    Finalidad ejercicio:  Eliminar con PDO
+    Alumno: Juan María Castillo Giménez
 */
 ?>
 <head>

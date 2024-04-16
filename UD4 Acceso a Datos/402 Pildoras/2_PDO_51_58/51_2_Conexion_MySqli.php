@@ -7,38 +7,35 @@
 */
 ?>
 <?php
-
-    //1 COMENTAR
+    //1 Esta variable recoge el valor de la busqueda pero en este apartado no nos sirve.
     $busqueda=$_GET["buscar"];
 
-    //2 COMENTAR
+    //2 Incluimos el archivo de datos de conexion
     require("../datos_conexion.php");
 
-    //3 COMENTAR Y COMPLETAR
-    //Añade comentarios donde copies líneas de cada parte del código en su forma procedimental
-    //PROCEDIMENTAL MYSQLI
-    //$conexion=mysqli_connect($db_host, $db_usuario, $db_contra, $db_nombre);
-    $conexion =  new mysqli("localhost", "root","","dwes");
+    //3 Conexión a la BBDD dwes
+    $conexion=mysqli_connect($db_host, $db_usuario, $db_contra, $db_nombre);
+    //$conexion =  new mysqli("localhost", "root","","dwes");
 
-    //4 COMENTAR Y COMPLETAR
+    //4 Comprobación de la conexión
     if ($conexion -> connect_errno) 
         echo "Fallo al conectar con la BBDD " . $conexion -> connect_errno;
     
-    //5 Función para envio correcto de caracteres de la lengua española
+    //5 Establecer formato de caracteres para la conexión
     $conexion -> set_charset("utf8");
 
-    //6 Consulta al ejecutar en la BBDD dwes
+    //6 Consulta SQL para seleccionar todos los productos de la tabla productos.
     $sql="SELECT * FROM PRODUCTOS";
 
     //7 Funcion de PHP POO mysqli para ejecutar la consulta en la BBDD.
     $resultados = $conexion -> query($sql);
 
-    //8 En caso de que ocurra algun tipo de error con este condicional cerraremos las conexion (OPCIONAL)
+    //8 Comprobación de la consulta
     if ($conexion -> errno) {
         die($conexion -> errno);
     }
 
-    //9 COMENTAR Y COMPLETAR
+    //9 Bucle para imprimir los datos de la consulta
     while($fila=$resultados->fetch_assoc()){
         
         echo "<table><tr><td>";
@@ -53,8 +50,8 @@
     }
 
     //Otra manera de imprimir estos datos
-    //10 COMENTAR Y COMPLETAR
-    while($fila=$resultados->fetch_array()){
+    //10 Bucle para imprimir los datos de la consulta
+    /* while($fila=$resultados->fetch_array()){
         
         echo "<table><tr><td>";
         echo $fila['0'] . "</td><td>";       
@@ -65,12 +62,8 @@
         echo $fila['5'] . "</td><td></tr></table>";        
         echo "<br/>";
 
-    }
+    } */
 
-
-    //11 COMENTAR Y COMPLETAR
-    $conexion -> close();
-
-
-       
+    //11 Cerramos la conexión
+    $conexion -> close();  
 ?>

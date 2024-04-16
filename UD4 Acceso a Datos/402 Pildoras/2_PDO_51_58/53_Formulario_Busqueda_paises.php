@@ -2,10 +2,10 @@
 <html lang="en">
 <?php
 /*
-    Información:  
-    Enlace a video:    
-    Finalidad ejercicio:  
-    Alumno:
+    Información:  Curso PHP MySQL. PDO Consultas preparadas. Vídeo 53
+    Enlace a video:  https://www.youtube.com/watch?v=r-TibX-mxtM   
+    Finalidad ejercicio:  Consultas preparadas
+    Alumno: Juan Maria Castillo Giménez
 */
 ?>
 <head>

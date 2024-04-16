@@ -4,8 +4,8 @@
 /*
     Información:  Olvidos, ruegos, dudas y preguntas. Vídeo 55
     Enlace a video:   https://youtu.be/cVmR1o573fA 
-    Finalidad ejercicio:  
-    Alumno:
+    Finalidad ejercicio: Responder dudas
+    Alumno: Juan María Castillo Giménez
 */
 ?>
 <head>
@@ -19,37 +19,37 @@
 
 <?php
 
-//1 COMENTAR
+//1 Recogemos los valores del formulario
 $busqueda_sec = $_POST["seccion"];
 $busqueda_porig = $_POST["p_origen"];
 
 
 try {
-    //2 COMENTAR
+    //2 Conexión a la BBDD dwes a través de PDO.
     $base = new PDO('mysql:host=localhost; dbname=dwes', 'root', '');
 
-    //3 COMENTAR
-    //$base -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    //$base -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+    //3 Establece el atributo de la conexión a PDO para que muestre los errores.
+    $base -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $base -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
     
-    //4 COMENTAR
+    //4 Especificamos el juego de caracteres
     $base -> exec("SET CHARACTER SET utf8");
 
-    //5 COMENTAR   
+    //5 Consulta SQL con marcadores para la sección y el país de origen.  
     $sql = "SELECT nombrearticulo, seccion, precio, paisdeorigen FROM productosss WHERE seccion = :SECC AND paisdeorigen = :PORIG";
 
-    //6 COMENTAR
+    //6 Prepara la consulta y nos devuelve un objeto de tipo PDOStatement
     $resultado = $base -> prepare($sql);
 
-    //7 COMENTAR
+    //7 Ejecutamos el objeto PDOStatement y le pasamos por parámetro un array con los valores de los marcadores.
     $resultado -> execute(array(":SECC"=>$busqueda_sec, ":PORIG"=>$busqueda_porig));
 
-    //8 COMENTAR Y MODIFICAR UN POCO EL ECHO, mostrar título...
+    //8 Recorremos el objeto PDOStatement con un bucle while
     while($registro = $resultado ->fetch(PDO::FETCH_ASSOC)){
         echo "Nombre Artículo: ". $registro['nombrearticulo'] ." seccion: ". $registro['seccion'] ." precio: ". $registro['precio'] ." Pais de origen: ". $registro['paisdeorigen'] ." <br>";
     }
 
-    //9 COMENTAR
+    //9 Cierra el cursor
     $resultado->closeCursor();
 
 } catch (Exception $e) {

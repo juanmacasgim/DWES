@@ -1,9 +1,9 @@
 <?php
 /*
-    Información:  
-    Enlace a video:    
-    Finalidad ejercicio:  
-    Alumno:
+    Información:  Conexión a BBDD utilizando Clases POO. Vídeo 57
+    Enlace a video:    https://www.youtube.com/watch?v=tA40GGmzrKY
+    Finalidad ejercicio:  Conexión a BBDD utilizando Programación Orientada a Objetos.
+    Alumno: Juan María Castillo Giménez
 */
 ?>
 <?php
@@ -27,8 +27,7 @@
     <?php
     //Bucle para imprimir todo los productos obtenidos de la BBDD.
     echo "<h2> Recuperando los productos </h2>";
-        foreach($array_productos as $key=>$elemento) { 
-               
+        foreach($array_productos as $key=>$elemento) {           
             echo "<table><tr><td>";
             echo "Clave: ". $key ." - Valor: " . $elemento['codigoarticulo'] . "</td><td>";       
             echo $elemento['nombrearticulo'] . "</td><td>";   
@@ -37,7 +36,6 @@
             echo $elemento['precio'] . "</td><td>";   
             echo $elemento['paisdeorigen'] . "</td><td></tr></table>";        
             echo "<br/>";
-
         }
     ?>
 </body>

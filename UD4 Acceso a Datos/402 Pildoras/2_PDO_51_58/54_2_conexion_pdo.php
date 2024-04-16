@@ -4,7 +4,7 @@
 /*
     Información:  PDO Marcadores en consultas preparadas. Vídeo 54
     Enlace a video:    https://www.youtube.com/watch?v=93o1Nx8Qmj0
-    Finalidad ejercicio:  
+    Finalidad ejercicio: Usar marcadores en consultas preparadas
     Alumno: Juan María Castillo Giménez
 */
 ?>
@@ -18,48 +18,44 @@
 <body>
 
 <?php
-
-//Dos de los atributos de la base de datos con los cuales buscaremos coincidencias.
+//Recogemos los valores del formulario
 $busqueda_sec = $_GET["seccion"];
 $busqueda_porig = $_GET["p_origen"];
 
-
 try {
-    //1 Metodo /funcion para conectar mediante pdo con la base de datos de mysql imprimiendo si se ha realizado corectamente o ha fallado.
+    //1 Conexión a la BBDD dwes a través de PDO.
     $base = new PDO('mysql:host=localhost; dbname=dwes', 'root', '');
 
-    //2 Añadimos los atributos con los cuales controlaremos las excepciones lanzadas por nuestro código.
+    //2 Establece el atributo de la conexión a PDO para que muestre los errores.
     $base -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    //3 funcion para establecer el tipo de caracteres a utilizar.
+    //3 Especificamos el juego de caracteres
     $base -> exec("SET CHARACTER SET utf8");
 
-    //4 COMPLETAR Y COMENTAR
+    //4 Consulta SQL con marcadores para la sección y el país de origen.
     $sql = "SELECT nombrearticulo, seccion, precio, paisdeorigen FROM productos WHERE seccion = :SECC AND paisdeorigen = :PORIG";
 
-    //5 El resultado de la sentencia sql lo vinculamos a la variable $resultado.
+    //5 Prepara la consulta y nos devuelve un objeto de tipo PDOStatement
     $resultado = $base -> prepare($sql);
 
-    //6 COMPLETAR Y COMENTAR
+    //6 Ejecutamos el objeto PDOStatement y le pasamos por parámetro un array con los valores de los marcadores.
     $resultado -> execute(array(":SECC"=>$busqueda_sec, ":PORIG"=>$busqueda_porig));
 
-    //7 COMPLETAR Y COMENTAR
+    //7 Recorremos el objeto PDOStatement con un bucle while
     while($registro = $resultado ->fetch(PDO::FETCH_ASSOC)){
-        echo "Nombre Artículo: ". $registro['nombrearticulo'] ." seccion: ". $registro['seccion'] ." precio: ". $registro['precio'] ." Pais de origen: ". $registro['paisdeorigen'] ." <br>";
+        echo "Nombre Artículo: ". $registro['nombrearticulo'] .
+        " seccion: ". $registro['seccion'] ." precio: ". $registro['precio'] .
+        " Pais de origen: ". $registro['paisdeorigen'] ." <br>";
     }
 
-    //8 Se cierra la tabla a la que hemos accedido para ahorra recursos que no se volveran a usar mejorando el rendimiendo de la manquina.
+    //8 Cierra el cursor
     $resultado->closeCursor();
-
 } catch (Exception $e) {
-    //9 Mostrar error cerrando el hilo de procesamiento de la conexion con pdo a la base de datos
+    //9 En caso de error, muestra el mensaje
     die('Error: ' . $e->GetMessage());
-    
 }finally{
-
     $base = null;
 }
-
 ?>
 </body>
 

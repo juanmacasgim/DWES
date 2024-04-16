@@ -4,21 +4,20 @@
 /*
     Información:  PDO Insertar y eliminar registros en BBDD. Vídeo 56
     Enlace a video:    https://www.youtube.com/watch?v=rKUbNFgjI8Y
-    Finalidad ejercicio:  
-    Alumno:
+    Finalidad ejercicio:  Insertar con PDO
+    Alumno: Juan María Castillo Giménez
 */
 ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Insertar con PDO</title>
 </head>
 
 <body>
 
 <?php
-
 //Todos los atributos de la base de datos con los cuales buscaremos coincidencias.
 $busqueda_cart = $_POST["c_art"];
 $busqueda_seccion = $_POST["seccion"];
@@ -28,37 +27,38 @@ $busqueda_fecha = $_POST["fecha"];
 $busqueda_importado = $_POST["importado"];
 $busqueda_porig = $_POST["p_origen"];
 
-
 try {
-    //COMPLETAR
+    //1 Conexión a la BBDD dwes a través de PDO.
     $base = new PDO('mysql:host=localhost; dbname=dwes', 'root', '');
+
+    //2 Establece el atributo de la conexión a PDO para que muestre los errores.
     $base -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    //3 Especificamos el juego de caracteres.
     $base -> exec("SET CHARACTER SET utf8");
 
-    $sql = "INSERT INTO PRODUCTOS (codigoarticulo, seccion, nombrearticulo, precio, fecha, importado, paisdeorigen) VALUES (:c_art,:seccion,:n_art,:precio,:fecha,:importado,:p_orig)";
-
- 
+    //4 Consulta SQL para insertar un nuevo registro en la tabla productos.
+    $sql = "INSERT INTO PRODUCTOS (codigoarticulo, seccion, nombrearticulo, precio, fecha, importado, paisdeorigen) 
+            VALUES (:c_art,:seccion,:n_art,:precio,:fecha,:importado,:p_orig)";
+    
+    //5 Prepara la consulta y nos devuelve un objeto de tipo PDOStatement.
     $resultado = $base -> prepare($sql);
 
-    
-    $resultado -> execute(array(":c_art"=>$busqueda_cart, ":seccion"=>$busqueda_seccion, ":n_art"=>$busqueda_nart,":precio"=>$busqueda_precio, ":fecha"=>$busqueda_fecha, ":importado"=>$busqueda_importado, ":p_orig"=>$busqueda_porig));
+    //6 Ejecutamos el objeto PDOStatement y le pasamos por parámetro un array con los valores de los marcadores.
+    $resultado -> execute(array(":c_art"=>$busqueda_cart, ":seccion"=>$busqueda_seccion, ":n_art"=>$busqueda_nart,
+    ":precio"=>$busqueda_precio, ":fecha"=>$busqueda_fecha, ":importado"=>$busqueda_importado, ":p_orig"=>$busqueda_porig));
 
-    
     echo "Registro Insertado";
-
-    //
+    
+    //7 Cierra el cursor.
     $resultado->closeCursor();
 
 } catch (Exception $e) {
-
+    //8 En caso de error, muestra el mensaje
     die('Error: ' . $e->GetMessage());
-
-
 }finally{
-
     $base = null;
 }
-
 ?>
 </body>
 
