@@ -35,11 +35,14 @@
 
 <body>
     <?php
+    //Obtenemos los datos del formulario
     $dni = $_GET["DNI"];
-
+    
+    //Obtenemos los datos de la conexion
     require("../src/Conexion.php");
 
     try {
+        //Realizamos la conexion
         $conexion = new mysqli($db_host, $db_usuario, $db_contra, $db_nombre);
     } catch (mysqli_sql_exception $e) {
         echo "Error al conectar a la BBDD: " . $e->getMessage();
@@ -48,14 +51,19 @@
 
     mysqli_set_charset($conexion, "utf8");
 
+
+    //Generamos la consulta
     $consulta = "SELECT * FROM `datosclientes` WHERE `DNI`='$dni'";
 
+    //Ejecutamos la consulta
     $resultados = mysqli_query($conexion, $consulta);
+
     if ($resultados == false) {
         echo "<h1>Error en la consulta</h1><br>";
     } else if (mysqli_num_rows($resultados) == 0) {
         echo "<h1>Registro no encontrado</h1><br>";
     } else {
+        //Mostramos los datos en un formulario
         while ($fila = mysqli_fetch_array($resultados, MYSQLI_ASSOC)) {
             echo ("
                 <h1>Registro Encontrado</h1>

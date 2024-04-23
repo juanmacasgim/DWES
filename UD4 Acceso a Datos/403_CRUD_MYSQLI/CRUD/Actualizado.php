@@ -29,6 +29,7 @@
 
 <body>
     <?php
+        //Obtenemos los datos del formulario
         $dni=$_GET["DNI"];
         $nombre=$_GET["Nombre"];
         $apellido=$_GET["Apellido"];
@@ -39,9 +40,11 @@
         $cp=$_GET["CP"];
         $telefono=$_GET["Telefono"];
         
+        //Obtenemos los datos de la conexion
         require("../src/Conexion.php");
 
         try {
+            //Realizamos la conexion
             $conexion = new mysqli($db_host, $db_usuario, $db_contra, $db_nombre);
         } catch (mysqli_sql_exception $e) {
             echo "Error al conectar a la BBDD: " . $e->getMessage();
@@ -50,16 +53,19 @@
 
         mysqli_set_charset($conexion, "utf8");
 
+        //Generamos la consulta
         $consulta = "UPDATE `datosclientes` SET `Nombre`='$nombre',`Apellido`='$apellido',`Edad`='$edad',`Direccion`='$direccion',
         `Localidad`='$localidad',`Provincia`='$provincia',`CP`='$cp',`Telefono`='$telefono' WHERE `DNI`='$dni'";
 
+        //Ejecutamos la consulta
         $resultados = mysqli_query($conexion, $consulta);
         
         if($resultados==false){
             echo "Error en la consulta";
         }else{
+            //Mostramos los datos
             echo("
-            <h1>Registro guardado</h1>
+            <h1>Registro Actualizado</h1>
             <table>
                 <tr>
                     <td>DNI</td><td>$dni</td>
