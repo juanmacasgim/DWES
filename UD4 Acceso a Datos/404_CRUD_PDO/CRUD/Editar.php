@@ -28,15 +28,14 @@
         $Edad = $_POST["Edad"];
         $Direccion = $_POST["Direccion"];
 
-        $consulta = "UPDATE `datosclientes` SET `Nombre`=:Nombre, `Apellido`=:Apellido, `Edad`=:Edad, `Direccion`=:Direccion WHERE `DNI`=:DNI";
+        $consulta = "UPDATE `datosclientes` SET `Nombre`=:Nombre, 
+        `Apellido`=:Apellido, `Edad`=:Edad, `Direccion`=:Direccion 
+        WHERE `DNI`=:DNI";
         $resultado = $conexion->prepare($consulta);
-        $resultado->execute(array(":DNI"=>$DNI, ":Nombre"=>$Nombre, ":Apellido"=>$Apellido, ":Edad"=>$Edad, ":Direccion"=>$Direccion));
+        $resultado->execute(array(":DNI"=>$DNI, ":Nombre"=>$Nombre, 
+        ":Apellido"=>$Apellido, ":Edad"=>$Edad, ":Direccion"=>$Direccion));
         header("Location:CRUD.php");
     }
-
-    
-
-
     ?>
     <p>
 
